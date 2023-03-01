@@ -13,6 +13,11 @@ const CategoryForm = styled.form`
         color: #9E7676;
         font-size: 1.2rem;
         margin-right: 10px;
+        &::placeholder{
+            color: #9E7676;
+            margin-left: 30px;
+            font-style: italic;
+        }
     }
     button{
         background-color: #F8CBA6;
@@ -42,7 +47,7 @@ function CreateCategory(){
     }
     return (
     <CategoryForm onSubmit={handleSubmit(handleFormValid)}>
-        <input {...register("customCategory")} placeholder="Add a new category"/>
+        <input {...register("customCategory")} placeholder="Add a new category" autoComplete="false"/>
         <button>ADD</button>
     </CategoryForm>
     )

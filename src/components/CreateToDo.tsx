@@ -10,11 +10,21 @@ const ToDoForm = styled.form`
 	width: 100%;
 	height: 3rem;
 	margin: 20px auto;
+	justify-content: center;
+
     input{
+        min-width: 500px;
         border:none;
         color: #9E7676;
         font-size: 1.2rem;
         margin-right: 10px;
+        &::placeholder{
+            color: #9E7676;
+            font-style: italic;
+            padding-left: 20px;
+            font-weight: 100;
+        }
+        
     }
     
     button{

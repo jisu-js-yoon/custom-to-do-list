@@ -11,16 +11,25 @@ const Container = styled.div`
     color: #A7727D;
     width: 100%;
     padding: 50px;
+    margin: 0px auto;
+    align-items: center;
+	justify-content: center;
+    min-height: 600px;
+    
 `
 const Title = styled.h1`
     font-weight: 600;
     font-size: 2rem;
     margin-bottom: 20px;
+    align-items: center;
+	justify-content: center;
+    display: flex;
 `
 const CategoryContainer =styled.div`
     display: flex;
-    margin: 20px 0;
-    justify-content: space-between;
+    margin: 20px auto;
+    justify-content: space-around;
+    max-width: 700px;
     select{
         background-color: #DBA39A;
         border-radius: 20px;
@@ -41,8 +50,10 @@ const CategoryContainer =styled.div`
 
 `
 const CategoryTitle=styled.div`
-    font-size: 20px;
+    font-size: 25px;
     margin-top: 25px;
+    display: flex;
+    justify-content: center;
     
 `
 
@@ -70,7 +81,6 @@ function ToDoList(){
                 </select>
             </CategoryContainer>
             <hr />
-            
             <CategoryTitle>{category}</CategoryTitle>
             <CreateToDo />
             {toDos?.map(toDo=> <ToDo key={toDo.id} {...toDo} />)}

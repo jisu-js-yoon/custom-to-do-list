@@ -4,14 +4,16 @@ import styled from "styled-components";
 import { Categories, customCategoryState, IToDo, toDoState } from "../atoms";
 
 const LiContainer= styled.li`
-    margin-top: 10px;
-    width: 60%;
+    margin: 5px auto;
+    max-width: 480px;
     background-color: white;
-    padding: 10px 40px;
+    padding: 10px 30px;
     border-radius: 20px;
     display: flex;
     list-style: none;
-    
+    justify-content: space-between;
+    align-items: center;
+
     span{
         margin-right: 20px;
     }
@@ -20,6 +22,7 @@ const LiContainer= styled.li`
         background-color:#F0DBDB;
         margin-left: 5px;
         margin-right: 5px;
+        border-radius: 30px;
     }
 `
 
@@ -37,6 +40,7 @@ function ToDo({text,category,id}:IToDo){
     return (
         <LiContainer>
         <span>{text}</span>
+        <div>
         {category !== Categories.DOING&& (
         <button name={Categories.DOING} onClick={onClick}>Doing</button>)}
         {category !== Categories.TO_DO&& (
@@ -46,6 +50,7 @@ function ToDo({text,category,id}:IToDo){
         {customCategory.map((category)=>(
             <button name={category.name} key={category.id} onClick={onClick}>{category.name}</button>
         ))}
+        </div>
         
         </LiContainer>
     )
